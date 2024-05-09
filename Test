@@ -2989,23 +2989,11 @@ function Library:CreateWindow(...)
                 local Size = 0;
                 for _, Element in next, Groupbox.Container:GetChildren() do
                     if not Element:IsA('UIListLayout') then
-                    SizeX = Element.Size.X.Offset;
-                    SizeY = Element.Size.Y.Offset;
+                        Size = Size + Element.Size.Y.Offset;
                     end;
                 end;
-                BoxOuter.Size = UDim2.fromOffset(SizeX, SizeY);
+                BoxOuter.Size = UDim2.new(1, 0, 1, 0);
             end;
-            Groupbox.Container = Container;
-            setmetatable(Groupbox, BaseGroupbox);
-            Groupbox:AddBlank(0);
-            Groupbox:Resize();
-            Tab.Groupboxes[Info.Name] = Groupbox;
-            return Groupbox;
-        end;
-
-        function Tab:AddLeftGroupbox(Name)
-            return Tab:AddGroupbox({ Side = 1; Name = Name; });
-        end;
 
         function Tab:AddRightGroupbox(Name)
             return Tab:AddGroupbox({ Side = 2; Name = Name; });
