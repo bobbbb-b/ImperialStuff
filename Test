@@ -2992,7 +2992,7 @@ function Library:CreateWindow(...)
                         Size = Size + Element.Size.Y.Offset;
                     end;
                 end;
-                BoxOuter.Size = UDim2.new(1, 0, 0,Size-5);
+                BoxOuter.Size = UDim2.fromOffset(380, 430);
             end;
             Groupbox.Container = Container;
             setmetatable(Groupbox, BaseGroupbox);
