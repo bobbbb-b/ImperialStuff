@@ -2994,6 +2994,10 @@ function Library:CreateWindow(...)
                 end;
                 BoxOuter.Size = UDim2.new(1, 0, 1, 0);
             end;
+        
+        function Tab:AddLeftGroupbox(Name)
+            return Tab:AddGroupbox({ Side = 1; Name = Name; });
+        end;
 
         function Tab:AddRightGroupbox(Name)
             return Tab:AddGroupbox({ Side = 2; Name = Name; });
