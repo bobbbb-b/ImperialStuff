@@ -2657,7 +2657,7 @@ function Library:CreateWindow(...)
     if type(Config.Title) ~= 'string' then Config.Title = 'No title' end
     
     if typeof(Config.Position) ~= 'UDim2' then Config.Position = UDim2.fromOffset(105, 0) end
-    if typeof(Config.Size) ~= 'UDim2' then Config.Size = UDim2.fromOffset(550, 600) end
+    if typeof(Config.Size) ~= 'UDim2' then Config.Size = UDim2.fromOffset(350, 400) end
     if Config.Center then
         Config.AnchorPoint = Vector2.new(0.5, 0.5)
         Config.Position = UDim2.fromScale(0.5, 0.5)
@@ -2989,11 +2989,11 @@ function Library:CreateWindow(...)
 
                 for _, Element in next, Groupbox.Container:GetChildren() do
                     if not Element:IsA('UIListLayout') then
-                        Size = Size + Element.Size.Y.Offset;
+                        Size += Size
                     end;
                 end;
 
-                BoxOuter.Size = UDim2.new(1, 0, 0, 20 + Size + 2);
+                BoxOuter.Size = UDim2.new(1, 0, 0, Size);
             end;
 
             Groupbox.Container = Container;
