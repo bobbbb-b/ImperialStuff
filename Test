@@ -2672,7 +2672,7 @@ function Library:CreateWindow(...)
         BackgroundColor3 = Color3.new(0, 0, 0);
         BorderSizePixel = 0;
         Position = Config.Position,
-        Size = UDim2.fromOffset(370, 420),
+        Size = Config.Size,
         Visible = false;
         ZIndex = 1;
         Parent = ScreenGui;
@@ -2848,7 +2848,7 @@ function Library:CreateWindow(...)
             BackgroundTransparency = 1;
             BorderSizePixel = 0;
             Position = UDim2.new(0, 8 - 1, 0, 8 - 1);
-            Size = UDim2.new(0.5, -12 + 2, 0, 327 + 2);
+            Size = UDim2.new(0.5, -12 + 2, 0, (Config.Size.Y-93) + 2);
             CanvasSize = UDim2.new(0, 0, 0, 0);
             BottomImage = '';
             TopImage = '';
@@ -2861,7 +2861,7 @@ function Library:CreateWindow(...)
             BackgroundTransparency = 1;
             BorderSizePixel = 0;
             Position = UDim2.new(0.5, 4 + 1, 0, 8 - 1);
-            Size = UDim2.new(0.5, -12 + 2, 0, 327 + 2);
+            Size = UDim2.new(0.5, -12 + 2, 0, (Config.Size.Y-93) + 2);
             CanvasSize = UDim2.new(0, 0, 0, 0);
             BottomImage = '';
             TopImage = '';
