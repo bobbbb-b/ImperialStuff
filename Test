@@ -2982,18 +2982,19 @@ function Library:CreateWindow(...)
                 FillDirection = Enum.FillDirection.Vertical;
                 SortOrder = Enum.SortOrder.LayoutOrder;
                 Parent = Container;
+                Padding = UDim2.new(0,10);
             });
 
             function Groupbox:Resize()
                 local Size = 0;
 
                 for _, Element in next, Groupbox.Container:GetChildren() do
-                    if not Element:IsA('UIListLayout') then
-                        Size += Size
+                    if (not Element:IsA('UIListLayout')) and Element.Visible then
+                        Size = 5 + Element.Size.Y.Offset;
                     end;
                 end;
 
-                BoxOuter.Size = UDim2.new(1, 0, 0, Size);
+                BoxOuter.Size = UDim2.new(1, 0, 0, 20 + Size + 2);
             end;
 
             Groupbox.Container = Container;
