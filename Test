@@ -2672,7 +2672,7 @@ function Library:CreateWindow(...)
         BackgroundColor3 = Color3.new(0, 0, 0);
         BorderSizePixel = 0;
         Position = Config.Position,
-        Size = UDim2.fromOffset(550, 600),
+        Size = UDim2.fromOffset(350, 400),
         Visible = false;
         ZIndex = 1;
         Parent = ScreenGui;
@@ -2973,7 +2973,7 @@ function Library:CreateWindow(...)
             local Container = Library:Create('Frame', {
                 BackgroundTransparency = 1;
                 Position = UDim2.new(0, 4, 0, 20);
-                Size = UDim2.new(1, -4, 1, -20);
+                Size = UDim2.new(1, -4, 1, -4);
                 ZIndex = 1;
                 Parent = BoxInner;
             });
@@ -2982,7 +2982,6 @@ function Library:CreateWindow(...)
                 FillDirection = Enum.FillDirection.Vertical;
                 SortOrder = Enum.SortOrder.LayoutOrder;
                 Parent = Container;
-                Padding = UDim2.new(0,10);
             });
 
             function Groupbox:Resize()
