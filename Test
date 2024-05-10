@@ -2672,7 +2672,7 @@ function Library:CreateWindow(...)
         BackgroundColor3 = Color3.new(0, 0, 0);
         BorderSizePixel = 0;
         Position = Config.Position,
-        Size = Config.Size,
+        Size = UDim2.fromOffset(450, 500),
         Visible = false;
         ZIndex = 1;
         Parent = ScreenGui;
